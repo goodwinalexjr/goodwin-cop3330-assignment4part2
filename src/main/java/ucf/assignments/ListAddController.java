@@ -9,9 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
@@ -20,6 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.chrono.Chronology;
 import java.util.ResourceBundle;
 
 public class ListAddController implements Initializable {
@@ -36,6 +35,12 @@ public class ListAddController implements Initializable {
     private CheckBox finsihedcheck;
     @FXML
     private TableColumn<toDoListList, LocalDate> dueDate;
+    @FXML
+    private TextField title;
+    @FXML
+    private DatePicker duedate;
+    @FXML
+    private TextArea des;
 
 
 
@@ -54,6 +59,7 @@ public class ListAddController implements Initializable {
         description.setEditable(true);
         description.setCellFactory(TextFieldTableCell.forTableColumn());
         dueDate.setEditable(true);
+        ;
 
 
     }
@@ -77,15 +83,14 @@ public class ListAddController implements Initializable {
         return tdl;
     }
 
+    public void dataupdate(toDoListList tdl){
+        itemList.getItems().add(tdl);
+    }
+
 
     public void addbuttonClicked(ActionEvent actionEvent) throws IOException {
-        Parent addtolist = FXMLLoader.load(getClass().getResource("TodolistAdd.FXML"));
-        Scene addtoScene = new Scene(addtolist);
-
-        Stage area = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-
-        area.setScene(addtoScene);
-        area.show();
+        toDoListList todolist = new toDoListList(title.getText(), des.getText(), false, duedate.getValue());
+        itemList.getItems().add(todolist);
     }
 
     public void removeButtonClicked(ActionEvent actionEvent) {
