@@ -9,10 +9,10 @@
    <children>
       <TableView fx:id="itemList" editable="true" layoutX="2.0" layoutY="14.0" prefHeight="284.0" prefWidth="787.0">
          <columns>
-            <TableColumn fx:id="item" prefWidth="75.0" text="Item" />
+            <TableColumn fx:id="item" onEditCommit="#changeTitleCellEvent" prefWidth="75.0" text="Item" />
             <TableColumn fx:id="dueDate" prefWidth="75.0" text="Due date" />
             <TableColumn fx:id="finished" prefWidth="75.0" text="Finished" />
-            <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="description" onEditCommit="#changeDescritionCellEvent" prefWidth="75.0" text="Description" />
          </columns>
       </TableView>
       <Button layoutX="803.0" layoutY="18.0" mnemonicParsing="false" onAction="#addbuttonClicked" prefHeight="82.0" prefWidth="163.0" text="Add" />

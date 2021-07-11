@@ -13,6 +13,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,6 +48,26 @@ public class ListAddController implements Initializable {
 
         itemList.setItems(getList());
 
+        itemList.setEditable(true);
+        item.setCellFactory(TextFieldTableCell.forTableColumn());
+        item.setEditable(true);
+        description.setEditable(true);
+        description.setCellFactory(TextFieldTableCell.forTableColumn());
+        dueDate.setEditable(true);
+
+
+    }
+
+    public void changeTitleCellEvent(TableColumn.CellEditEvent edditedCell){
+
+        toDoListList todolist = itemList.getSelectionModel().getSelectedItem();
+        todolist.setTitle(edditedCell.getNewValue().toString());
+    }
+
+    public void changeDescritionCellEvent(TableColumn.CellEditEvent edditedCell){
+
+        toDoListList todolist = itemList.getSelectionModel().getSelectedItem();
+        todolist.setDescription(edditedCell.getNewValue().toString());
     }
 
     private ObservableList<toDoListList> getList() {
