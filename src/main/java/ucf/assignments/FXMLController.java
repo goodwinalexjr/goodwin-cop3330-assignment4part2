@@ -49,7 +49,7 @@ public class FXMLController {
         }
         else {
             todolistlist.getItems().addAll(Title.getText());
-            
+
             Title.setText("");
         }
     }
