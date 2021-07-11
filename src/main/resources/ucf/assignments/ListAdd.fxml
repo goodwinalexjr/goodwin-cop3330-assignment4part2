@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="422.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListAddController">
+   <children>
+      <TableView fx:id="itemList" editable="true" layoutX="2.0" layoutY="14.0" prefHeight="284.0" prefWidth="787.0">
+         <columns>
+            <TableColumn fx:id="item" prefWidth="75.0" text="Item" />
+            <TableColumn fx:id="dueDate" prefWidth="75.0" text="Due date" />
+            <TableColumn fx:id="finished" prefWidth="75.0" text="Finished">
+               <graphic>
+                  <CheckBox fx:id="finsihedcheck" mnemonicParsing="false" onAction="#checkboxClicked" />
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+         </columns>
+      </TableView>
+      <Button layoutX="803.0" layoutY="18.0" mnemonicParsing="false" onAction="#addbuttonClicked" prefHeight="82.0" prefWidth="163.0" text="Add" />
+      <Button layoutX="803.0" layoutY="115.0" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove" />
+      <Button layoutX="803.0" layoutY="205.0" mnemonicParsing="false" onAction="#editlistButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Edit to-do list" />
+      <Button layoutX="20.0" layoutY="310.0" mnemonicParsing="false" onAction="#displayincompleteButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Display Incomplete" />
+      <Button layoutX="20.0" layoutY="356.0" mnemonicParsing="false" onAction="#displaycompleteButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Display complete" />
+      <Button layoutX="139.0" layoutY="310.0" mnemonicParsing="false" onAction="#displayAllbuttonClicked" prefHeight="46.0" prefWidth="119.0" text="Display all" />
+      <Button layoutX="292.0" layoutY="310.0" mnemonicParsing="false" onAction="#exportlistButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Export this list" />
+      <Button layoutX="292.0" layoutY="356.0" mnemonicParsing="false" onAction="#ExportalllistButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Export all lists" />
+      <Button layoutX="411.0" layoutY="310.0" mnemonicParsing="false" onAction="#importlistsButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Import List" />
+   </children>
+</AnchorPane>
