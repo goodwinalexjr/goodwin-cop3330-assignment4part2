@@ -20,14 +20,26 @@ public class toDoListList {
 
     private SimpleStringProperty title;
     private SimpleStringProperty description;
-    private boolean complete;
+    private SimpleStringProperty complete;
     private LocalDate duedate;
 
-    public toDoListList(String title, String description, boolean complete, LocalDate duedate) {
+    public toDoListList(String title, String description, String complete, LocalDate duedate) {
         this.title = new SimpleStringProperty(title);
         this.description = new SimpleStringProperty(description);
-        this.complete = complete;
+        this.complete = new SimpleStringProperty(complete);
         this.duedate = duedate;
+    }
+
+    public String getComplete() {
+        return complete.get();
+    }
+
+    public SimpleStringProperty completeProperty() {
+        return complete;
+    }
+
+    public void setComplete(String complete) {
+        this.complete.set(complete);
     }
 
     public String getTitle() {
@@ -54,13 +66,7 @@ public class toDoListList {
         this.description.set(description);
     }
 
-    public boolean isComplete() {
-        return complete;
-    }
 
-    public void setComplete(boolean complete) {
-        this.complete = complete;
-    }
 
     public LocalDate getDuedate() {
         return duedate;
