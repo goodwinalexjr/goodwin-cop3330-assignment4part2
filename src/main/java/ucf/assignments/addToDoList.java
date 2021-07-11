@@ -8,12 +8,10 @@ package ucf.assignments;
 
 public class addToDoList {
 
-    toDoList[] tdl = new toDoList[100];
 
-public int addtolist(int number, String name){
-    tdl[number] = new toDoList(name);
-    number = number + 1;
-    return number;
+public void addtolist(int number, String name){
+
+
 }
 
 }
