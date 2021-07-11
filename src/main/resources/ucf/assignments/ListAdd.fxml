@@ -13,10 +13,10 @@
    <children>
       <TableView fx:id="itemList" editable="true" layoutX="2.0" layoutY="14.0" prefHeight="284.0" prefWidth="787.0">
          <columns>
-            <TableColumn fx:id="item" onEditCommit="#changeTitleCellEvent" prefWidth="75.0" text="Item" />
+            <TableColumn fx:id="item" prefWidth="75.0" text="Item" />
             <TableColumn fx:id="dueDate" prefWidth="75.0" text="Due date" />
             <TableColumn fx:id="finished" prefWidth="75.0" text="Finished" />
-            <TableColumn fx:id="description" onEditCommit="#changeDescritionCellEvent" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="description" prefWidth="556.0" text="Description" />
          </columns>
       </TableView>
       <Button layoutX="739.0" layoutY="538.0" mnemonicParsing="false" onAction="#addbuttonClicked" prefHeight="82.0" prefWidth="163.0" text="Add" />
@@ -35,5 +35,6 @@
       <DatePicker fx:id="duedate" layoutX="187.0" layoutY="470.0" prefHeight="25.0" prefWidth="269.0" />
       <Button layoutX="803.0" layoutY="115.0" mnemonicParsing="false" onAction="#removeAllButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove All" />
       <Button layoutX="739.0" layoutY="429.0" mnemonicParsing="false" onAction="#changeDuedateCellButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Edit selected Info" />
+      <TextField fx:id="hiddensearch" layoutX="29.0" layoutY="579.0" prefHeight="25.0" prefWidth="20.0" scaleX="0.0" scaleY="0.0" scaleZ="0.0" />
    </children>
 </AnchorPane>

@@ -21,13 +21,13 @@ public class toDoListList {
     private SimpleStringProperty title;
     private SimpleStringProperty description;
     private SimpleStringProperty complete;
-    private LocalDate duedate;
+    private SimpleStringProperty duedate;
 
-    public toDoListList(String title, String description, String complete, LocalDate duedate) {
+    public toDoListList(String title, String description, String complete, String duedate) {
         this.title = new SimpleStringProperty(title);
         this.description = new SimpleStringProperty(description);
         this.complete = new SimpleStringProperty(complete);
-        this.duedate = duedate;
+        this.duedate = new SimpleStringProperty(duedate);;
     }
 
     public String getComplete() {
@@ -66,13 +66,15 @@ public class toDoListList {
         this.description.set(description);
     }
 
+    public String getDuedate() {
+        return duedate.get();
+    }
 
-
-    public LocalDate getDuedate() {
+    public SimpleStringProperty duedateProperty() {
         return duedate;
     }
 
-    public void setDuedate(LocalDate duedate) {
-        this.duedate = duedate;
+    public void setDuedate(String duedate) {
+        this.duedate.set(duedate);
     }
 }
