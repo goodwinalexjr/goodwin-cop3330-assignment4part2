@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
+
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -19,10 +19,10 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
 
-import java.util.Locale;
+
 import java.util.ResourceBundle;
 import java.util.Scanner;
-import java.util.logging.Filter;
+
 
 public class ListAddController implements Initializable {
 
@@ -159,35 +159,39 @@ public class ListAddController implements Initializable {
 
         Stage load = new Stage();
         FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("To do list files", "*.tdl"));
         fc.setTitle("Load");
         File file = fc.showOpenDialog(load);
+        System.out.println(file.toString());
         if(file != null){
 
-            load(itemList.getItems(), file);
+            ObservableList<toDoListList> alllist;
+            alllist = itemList.getItems();
+            tdl.removeAll(alllist);
+            //load(itemList.getItems(), file);
+            Scanner myobj = new Scanner(file);
+
+            while(myobj.hasNextLine()){
+
+                String title = myobj.nextLine();
+
+                String duedate = myobj.nextLine();
+
+                String complete = myobj.nextLine();
+
+                String description = myobj.nextLine();
+
+                toDoListList todolist = new toDoListList(title, description, complete, duedate);
+
+                tdl.addAll(todolist);
+
+            }
         }
+
+
     }
 
-    public void load(ObservableList<toDoListList> tdl, File file) throws IOException {
 
-        ObservableList<toDoListList> alllist;
-        alllist = itemList.getItems();
-        tdl.removeAll(alllist);
-
-
-        BufferedReader br = new BufferedReader(new FileReader(file));
-
-        String line;
-
-        while((line = br.readLine()) != null){
-            String title = line;
-            String duedate = line;
-            String complete = line;
-            String description = line;
-            toDoListList todolist = new toDoListList(title, duedate, complete, description);
-            tdl.addAll(todolist);
-        }
-
-    }
 
     public void CompleteButtonClicked(ActionEvent actionEvent) {
         toDoListList todolist = itemList.getSelectionModel().getSelectedItem();

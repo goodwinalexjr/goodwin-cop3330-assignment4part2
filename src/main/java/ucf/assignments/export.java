@@ -18,7 +18,7 @@ public class export {
     //create a fuinction that will save to the computer for all to do lists
 
     public static void save(ObservableList<toDoListList> tdl, File file) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(file + ".txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file + ".tdl"));
 
         for(toDoListList todolistlist: tdl){
             bw.write(todolistlist.getTitle().toString());
