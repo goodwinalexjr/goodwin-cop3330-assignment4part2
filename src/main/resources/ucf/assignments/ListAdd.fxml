@@ -34,12 +34,12 @@
       <Label layoutX="187.0" layoutY="408.0" prefHeight="17.0" prefWidth="110.0" text="To Do List Name" />
       <TextArea fx:id="des" layoutX="463.0" layoutY="422.0" prefHeight="200.0" prefWidth="269.0" />
       <Label layoutX="187.0" layoutY="453.0" prefHeight="17.0" prefWidth="110.0" text="Due Date" />
-      <Label layoutX="462.0" layoutY="423.0" prefHeight="17.0" prefWidth="110.0" text="Description" />
+      <Label layoutX="463.0" layoutY="400.0" prefHeight="17.0" prefWidth="110.0" text="Description" />
       <DatePicker fx:id="duedate" layoutX="187.0" layoutY="470.0" prefHeight="25.0" prefWidth="269.0" />
       <Button layoutX="802.0" layoutY="139.0" mnemonicParsing="false" onAction="#removeAllButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove All" />
       <Button layoutX="739.0" layoutY="429.0" mnemonicParsing="false" onAction="#changeDuedateCellButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Edit selected Info" />
       <TextField fx:id="hiddensearch" layoutX="29.0" layoutY="579.0" prefHeight="25.0" prefWidth="20.0" scaleX="0.0" scaleY="0.0" scaleZ="0.0" />
-      <MenuBar layoutY="2.0">
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="966.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -49,7 +49,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#HelpButtonClicked" text="About" />
             </items>
           </Menu>
         </menus>

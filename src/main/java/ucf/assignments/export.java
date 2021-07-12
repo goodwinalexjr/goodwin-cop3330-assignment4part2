@@ -14,8 +14,9 @@ import java.io.IOException;
 
 public class export {
     //create a function that will save to the computer for a singele to do list
-
-    //create a fuinction that will save to the computer for all to do lists
+    //need to read in each item and then write to a file
+    //seperate somehow???? thinking with a new line or space
+    //figure out about bufferwriter and how to save with that
 
     public static void save(ObservableList<toDoListList> tdl, File file) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(file + ".tdl"));

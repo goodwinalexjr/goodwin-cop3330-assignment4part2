@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+class App{
+main
+start
+}
+class toDoListList{
+String Title()
+String DueDate()
+Boolean Complete()
+String Description()
+}
+
+class export{
+export
+}
+class ListAddController{
+TableView: itemList
+TableColumn: item
+TableColumn:description
+TableColumn:finished
+TableColumn:dueDate
+TextField:title
+TextField:hiddensearch
+DatePicker:duedate
+TextArea:des
+
+initialize()
+changeDuedateCellButtonClicked()
+addbuttonClicked()
+removeButtonClicked()
+displayincompleteButtonClicked()
+displaycompleteButtonClicked()
+displayAllbuttonClicked()
+exportlistButtonClicked()
+importlistsButtonClicked()
+CompleteButtonClicked()
+removeAllButtonClicked()
+HelpButtonClicked()
+}
+
+
+javafx.Application <|-- App
+
+App - ListAddController
+ListAddController --|> help
+
+
+
+ListAddController <|--|> toDoListList
+ListAddController --|> export
+
+
+
+
+
+
+
+@enduml

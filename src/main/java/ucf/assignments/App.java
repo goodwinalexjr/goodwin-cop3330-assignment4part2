@@ -16,13 +16,13 @@ import javafx.stage.Stage;
 
 public class App extends Application{
 
+    //start the application by loading in the scene from fxml
+    //have a main that launches
+
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ListAdd.fxml"));
 
         Scene scene = new Scene(root);
-
-
-
 
         stage.setTitle("To-do list");
         stage.setScene(scene);

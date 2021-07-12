@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="598.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.Help">
+   <children>
+      <Text layoutX="22.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This application is used to make to do lists to help you remember. It starts with a test to do list.  " wrappingWidth="558.13671875" />
+      <Text layoutX="22.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can fill in the boxes on the bottom with your to do list name, due date (using the calendar icon) and a brief description of what that to do list is (max 256 characters). Afterwards you would click add, You can also edit a to do list by adding in the fields and choosing a to do list. Then you woudl click on Edit selecteed info." wrappingWidth="615.09375" />
+      <Text layoutX="22.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can select a to do list and then click on complete which will change the state to finish. With this you can Displaay your incompleteto do list or display your complete to do list clicking on the Display Incomplete or Display Complete buttons" wrappingWidth="615.09375" />
+      <Text layoutX="22.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can save your to do list which will save as a .tdl and can also load in to do lists with the Export and Import buttons. You can also go to File -&gt; Save and File -&gt; load." wrappingWidth="615.09375" />
+      <Text layoutX="22.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last you can remove and to do list by selecting it and then clicking on remove, you can also remove all by clicking on the remove all button." wrappingWidth="615.09375" />
+      <Text layoutX="31.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In loving memory of Rey" />
+   </children>
+</AnchorPane>
