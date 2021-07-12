@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -11,7 +14,7 @@
 
 <AnchorPane prefHeight="634.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListAddController">
    <children>
-      <TableView fx:id="itemList" editable="true" layoutX="2.0" layoutY="14.0" prefHeight="284.0" prefWidth="787.0">
+      <TableView fx:id="itemList" editable="true" layoutX="1.0" layoutY="38.0" prefHeight="284.0" prefWidth="787.0">
          <columns>
             <TableColumn fx:id="item" prefWidth="75.0" text="Item" />
             <TableColumn fx:id="dueDate" prefWidth="75.0" text="Due date" />
@@ -20,21 +23,36 @@
          </columns>
       </TableView>
       <Button layoutX="739.0" layoutY="538.0" mnemonicParsing="false" onAction="#addbuttonClicked" prefHeight="82.0" prefWidth="163.0" text="Add" />
-      <Button layoutX="803.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove" />
-      <Button layoutX="20.0" layoutY="310.0" mnemonicParsing="false" onAction="#displayincompleteButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Display Incomplete" />
-      <Button layoutX="20.0" layoutY="356.0" mnemonicParsing="false" onAction="#displaycompleteButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Display complete" />
-      <Button layoutX="139.0" layoutY="310.0" mnemonicParsing="false" onAction="#displayAllbuttonClicked" prefHeight="46.0" prefWidth="119.0" text="Display all" />
-      <Button layoutX="292.0" layoutY="310.0" mnemonicParsing="false" onAction="#exportlistButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Export this list" />
-      <Button layoutX="411.0" layoutY="310.0" mnemonicParsing="false" onAction="#importlistsButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Import List" />
-      <Button layoutX="803.0" layoutY="216.0" mnemonicParsing="false" onAction="#CompleteButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Complete" />
+      <Button layoutX="802.0" layoutY="38.0" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove" />
+      <Button layoutX="19.0" layoutY="334.0" mnemonicParsing="false" onAction="#displayincompleteButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Display Incomplete" />
+      <Button layoutX="19.0" layoutY="380.0" mnemonicParsing="false" onAction="#displaycompleteButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Display complete" />
+      <Button layoutX="138.0" layoutY="334.0" mnemonicParsing="false" onAction="#displayAllbuttonClicked" prefHeight="46.0" prefWidth="119.0" text="Display all" />
+      <Button layoutX="291.0" layoutY="334.0" mnemonicParsing="false" onAction="#exportlistButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Export this list" />
+      <Button layoutX="410.0" layoutY="334.0" mnemonicParsing="false" onAction="#importlistsButtonClicked" prefHeight="46.0" prefWidth="119.0" text="Import List" />
+      <Button layoutX="802.0" layoutY="240.0" mnemonicParsing="false" onAction="#CompleteButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Complete" />
       <TextField fx:id="title" layoutX="187.0" layoutY="428.0" prefHeight="25.0" prefWidth="269.0" />
       <Label layoutX="187.0" layoutY="408.0" prefHeight="17.0" prefWidth="110.0" text="To Do List Name" />
       <TextArea fx:id="des" layoutX="463.0" layoutY="422.0" prefHeight="200.0" prefWidth="269.0" />
       <Label layoutX="187.0" layoutY="453.0" prefHeight="17.0" prefWidth="110.0" text="Due Date" />
-      <Label layoutX="463.0" layoutY="399.0" prefHeight="17.0" prefWidth="110.0" text="Description" />
+      <Label layoutX="462.0" layoutY="423.0" prefHeight="17.0" prefWidth="110.0" text="Description" />
       <DatePicker fx:id="duedate" layoutX="187.0" layoutY="470.0" prefHeight="25.0" prefWidth="269.0" />
-      <Button layoutX="803.0" layoutY="115.0" mnemonicParsing="false" onAction="#removeAllButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove All" />
+      <Button layoutX="802.0" layoutY="139.0" mnemonicParsing="false" onAction="#removeAllButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Remove All" />
       <Button layoutX="739.0" layoutY="429.0" mnemonicParsing="false" onAction="#changeDuedateCellButtonClicked" prefHeight="82.0" prefWidth="163.0" text="Edit selected Info" />
       <TextField fx:id="hiddensearch" layoutX="29.0" layoutY="579.0" prefHeight="25.0" prefWidth="20.0" scaleX="0.0" scaleY="0.0" scaleZ="0.0" />
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#exportlistButtonClicked" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#importlistsButtonClicked" text="Load" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

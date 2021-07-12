@@ -10,15 +10,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.logging.Filter;
 
 public class ListAddController implements Initializable {
@@ -116,9 +119,10 @@ public class ListAddController implements Initializable {
         alllist = itemList.getItems();
         removelist = itemList.getSelectionModel().getSelectedItems();
 
-        for(toDoListList todolist : removelist){
+        tdl.removeAll(removelist);
+        /*for(toDoListList todolist : removelist){
             alllist.remove(todolist);
-        }
+        }*/
 
 
     }
@@ -140,12 +144,50 @@ public class ListAddController implements Initializable {
         hiddensearch.setText(field);
     }
 
-    public void exportlistButtonClicked(ActionEvent actionEvent) {
+    public void exportlistButtonClicked(ActionEvent actionEvent) throws IOException {
+        Stage save = new Stage();
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save");
+        File file = fc.showSaveDialog(save);
+        if(file != null){
+            export.save(itemList.getItems(), file);
+        }
     }
 
-    public void importlistsButtonClicked(ActionEvent actionEvent) {
+
+    public void importlistsButtonClicked(ActionEvent actionEvent) throws IOException {
+
+        Stage load = new Stage();
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Load");
+        File file = fc.showOpenDialog(load);
+        if(file != null){
+
+            load(itemList.getItems(), file);
+        }
     }
 
+    public void load(ObservableList<toDoListList> tdl, File file) throws IOException {
+
+        ObservableList<toDoListList> alllist;
+        alllist = itemList.getItems();
+        tdl.removeAll(alllist);
+
+
+        BufferedReader br = new BufferedReader(new FileReader(file));
+
+        String line;
+
+        while((line = br.readLine()) != null){
+            String title = line;
+            String duedate = line;
+            String complete = line;
+            String description = line;
+            toDoListList todolist = new toDoListList(title, duedate, complete, description);
+            tdl.addAll(todolist);
+        }
+
+    }
 
     public void CompleteButtonClicked(ActionEvent actionEvent) {
         toDoListList todolist = itemList.getSelectionModel().getSelectedItem();
@@ -160,6 +202,8 @@ public class ListAddController implements Initializable {
     }
 
     public void removeAllButtonClicked(ActionEvent actionEvent) {
-        itemList.getItems().clear();
+        ObservableList<toDoListList> removelist, alllist;
+        alllist = itemList.getItems();
+        tdl.removeAll(alllist);
     }
 }
